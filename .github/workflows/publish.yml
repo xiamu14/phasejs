@@ -43,7 +43,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
-      - run: pnpm install -w
+      - run: pnpm install
 
       - name: build & publish
         run: |
