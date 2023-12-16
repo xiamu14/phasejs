@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.2.7",
+    "framer-motion": "^7.2.1",
+    "next-contentlayer": "^0.2.7",
+    "rimraf": "^3.0.2",
+    "rollup-plugin-react-scoped-css": "^0.6.1"
+  },
+  "workspaces": [
+    "packages/*",
+    "document"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "deploy": "turbo run build --filter=document --no-deps",
+    "list-packages": "echo [$(pnpm -s m ls --depth -1 | tr \" \" \"\n\" | grep -o \"@.*@\" | rev | cut -c 2- | rev | sed -e 's/\\(.*\\)/\"\\1\"/' | paste -sd, - )]"
+  },
+  "devDependencies": {
+    "pnpm": "^7.9.5",
+    "renew-it": "^1.5.2",
+    "sass": "^1.54.8",
+    "turbo": "^1.4.3"
+  }
+}
