@@ -8,8 +8,7 @@
     "rollup-plugin-react-scoped-css": "^0.6.1"
   },
   "workspaces": [
-    "packages/*",
-    "document"
+    "packages/*"
   ],
   "scripts": {
     "dev": "turbo run dev",
@@ -20,7 +19,6 @@
   "devDependencies": {
     "pnpm": "^7.9.5",
     "renew-it": "^1.5.2",
-    "sass": "^1.54.8",
     "turbo": "^1.4.3"
   }
 }

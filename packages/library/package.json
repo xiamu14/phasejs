@@ -1,0 +1,32 @@
+{
+  "name": "phasejs",
+  "version": "0.0.1",
+  "description": "PhaseJS",
+  "sideEffects": true,
+  "types": "./lib",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc"
+  },
+  "keywords": [],
+  "author": "ben",
+  "license": "ISC",
+  "peerDependencies": {
+    "big.js": "^6.2.1",
+    "lodash": "^4.17.21",
+    "react": "^18"
+  },
+  "devDependencies": {
+    "@types/big.js": "^6.2.2",
+    "@types/lodash": "^4.14.202",
+    "@types/react": "^18",
+    "big.js": "^6.2.1",
+    "lodash": "^4.17.21",
+    "react": "^18",
+    "renew-it": "^1.5.2",
+    "rimraf": "^5.0.5",
+    "typescript": "^5"
+  }
+}
