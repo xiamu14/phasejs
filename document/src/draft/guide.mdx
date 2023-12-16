@@ -1,0 +1,31 @@
+# Getting started
+
+Welcome to the SceneUI documentation!
+
+SceneUI help you to make beautiful, modern, and fast websites regardless of your design experience, created with <a href="https://reactjs.org/" target="_blank">React.js</a> and <a href="https://www.framer.com/motion/" target="_blank">Framer Motion</a> and
+inspired by <a href="https://nextui.org/"  target="_blank">NextUI</a>.
+
+### Installation
+
+Inside your React project directory, install SceneUI component by running either of the following:
+
+```powershell
+pnpm add @sceneui/xxx
+```
+
+### Setup
+
+```powershell
+pnpm add vite-plugin-sceneui-imp -D
+```
+
+For auto import style, you need to set up the `vite-plugin-sceneui-imp` in your `vite.config.js`
+
+```js vite.config.js
+import { defineConfig } from "vite";
+import vitePluginSceneuiImp from "vite-plugin-sceneui-imp";
+
+export default defineConfig({
+  plugins: [vitePluginSceneuiImp()],
+});
+```

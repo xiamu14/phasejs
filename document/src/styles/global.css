@@ -1,0 +1,123 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+}
+p {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #333;
+}
+
+:root {
+  --primary-color: #595bef;
+  --primary-color-light: #a7a8f6;
+  --content-padding-x: 11vw;
+  --content-width: 78vw;
+  --content-max-width: 1350px;
+  --content-min-width: 1000px;
+  --sidebar-width: 240px;
+  --content-toc-width: 160px;
+  --navbar-height: 76px;
+  --navbar-height-negative: -76px;
+}
+
+@media (min-width: 1730px) {
+  :root {
+    --content-padding-x: calc(50vw - 675px);
+  }
+}
+
+@media (max-width: 1282px) {
+  :root {
+    --content-padding-x: calc(50vw - 500px);
+  }
+}
+
+:target:before {
+  content: "";
+  display: block;
+  height: var(--navbar-height);
+  margin-top: calc(var(--navbar-height-negative) - 1em);
+  margin-bottom: 1em;
+}
+
+.ch-codeblock,
+.ch-codegroup {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+code {
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+p > a {
+  color: var(--primary-color);
+}
+
+p > code {
+  background: var(--primary-color-light);
+  color: var(--primary-color);
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+nav.toc {
+  position: fixed;
+  top: var(--navbar-height);
+  right: var(--content-padding-x);
+  width: var(--content-toc-width);
+  margin-top: 14px;
+}
+
+nav.toc::before {
+  content: "Contents";
+  font-size: 24px;
+  color: #555;
+  margin: 0.67em 0;
+  display: block;
+}
+
+nav ol {
+  padding-left: 10px;
+}
+
+nav .toc-item {
+  height: 30px;
+  color: #7e868c;
+  list-style-type: none;
+  font-size: 14px;
+}
+
+nav .toc-item:hover {
+  font-weight: bold;
+  color: #11181c;
+}
