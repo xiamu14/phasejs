@@ -3,12 +3,12 @@
   "version": "0.0.5",
   "description": "PhaseJS",
   "sideEffects": true,
-  "types": "./lib",
+  "types": "./",
   "files": [
-    "lib"
+    "lib/*"
   ],
   "scripts": {
-    "build": "rimraf lib && tsc"
+    "build": "rimraf lib  && tsc && cp ./package.json ./lib"
   },
   "keywords": [],
   "author": "ben",
