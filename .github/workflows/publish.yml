@@ -69,10 +69,10 @@ jobs:
           property: version
 
       # 企业微信消息
-      - name: WeChat Work notification by text
+      - name: WeChat Work notification by news
         uses: chf007/action-wechat-work@master
         env:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
           msgtype: news
-          articles: '[{"title":"PhaseJS：月相）前端工具集","description":"v${{steps.version.outputs.value}}  发布成功 🎉","url":"","picurl":"https://t7.baidu.com/it/u=3039972918,1763345442&fm=193&f=GIF"}]'
+          articles: '[{"title":"PhaseJS：月相）前端工具集","description":"v${{steps.version.outputs.value}}  发布成功 🎉","url":"https://github.com/xiamu14/phasejs","picurl":"https://t7.baidu.com/it/u=3039972918,1763345442&fm=193&f=GIF"}]'
