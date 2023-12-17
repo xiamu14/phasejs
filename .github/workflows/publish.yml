@@ -74,5 +74,5 @@ jobs:
         env:
           WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
         with:
-          msgtype: text
-          content: "🎉 ${{steps.name.outputs.value}} : V${{steps.version.outputs.value}} 发布成功！"
+          msgtype: news
+          articles: '[{"title":"PhaseJS：月相）前端工具集","description":"v${{steps.version.outputs.value}}  发布成功 🎉","url":"","picurl":"https://t7.baidu.com/it/u=3039972918,1763345442&fm=193&f=GIF"}]'
