@@ -10,7 +10,7 @@ export function isUsefulObject(
  * @param keys
  * @returns
  */
-export function pick<
+export function pickObject<
   T extends Record<string | number | symbol, unknown>,
   K extends keyof T
 >(object: T, keys: K[]): Pick<T, K> {

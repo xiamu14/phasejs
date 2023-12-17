@@ -1,6 +1,6 @@
 import isEqual from "lodash/isEqual";
 
-export function diffData<T>(
+export function diffArray<T>(
   source: T[],
   changed: T[]
 ): {

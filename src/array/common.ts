@@ -3,7 +3,10 @@ export function isUsefulArray(list?: any[]) {
   return false;
 }
 
-export function arrayRemove<T>(data: T[], index: number | ((item: T) => true)) {
+export function removeArrayItem<T>(
+  data: T[],
+  index: number | ((item: T) => true)
+) {
   if (data.length > 0) {
     const indexNum =
       typeof index === "function" ? data.findIndex(index) : index;
