@@ -4,11 +4,8 @@
   "description": "PhaseJS",
   "sideEffects": true,
   "types": "./",
-  "files": [
-    "lib/*"
-  ],
   "scripts": {
-    "build": "rimraf lib  && tsc && cp ./package.json ./lib"
+    "build": "rimraf lib  && tsc"
   },
   "keywords": [],
   "author": "ben",
