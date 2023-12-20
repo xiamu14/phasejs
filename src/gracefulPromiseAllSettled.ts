@@ -1,15 +1,22 @@
-const gracefulPromiseAllSettled = async <T extends Record<string, any>>(
-  collection: Record<keyof T, () => Promise<T[keyof T]>>
+const gracefulPromiseAllSettled = async <
+  T extends Record<string, () => Promise<any>>,
+  K extends keyof T
+>(
+  collection: T
 ) => {
-  const names = Object.keys(collection);
-  const promiseFnList = names.map((item) => collection[item]());
+  const keys = Object.keys(collection);
+  const promiseFnList = keys.map((item) => collection[item]()) as ReturnType<
+    T[K]
+  >[];
   const result = await Promise.allSettled(promiseFnList);
-  return result.map((item, index) => {
-    return {
-      ...item,
-      name: names[index] as keyof T,
-    };
-  });
+  return {
+    get: <K extends keyof T>(name: K) => {
+      const index = keys.findIndex((n) => n === name);
+      return result[index] as PromiseSettledResult<Awaited<ReturnType<T[K]>>>;
+    },
+
+    result,
+  };
 };
 
 export default gracefulPromiseAllSettled;
