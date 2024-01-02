@@ -24,6 +24,7 @@
     "react": "^18",
     "renew-it": "^1.5.2",
     "rimraf": "^5.0.5",
+    "stark-dev": "1.0.1-alpha.5",
     "typescript": "^5"
   }
 }
