@@ -10,8 +10,9 @@ export function uniqueId() {
   );
 }
 
+//
 export function random({ min, max }: { min: number; max: number }) {
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 }
 
 export function compareVersion(versionA: string, versionB: string) {
