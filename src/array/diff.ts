@@ -2,24 +2,29 @@ import isEqual from "lodash/isEqual";
 
 export function diffArray<T>(
   source: T[],
-  changed: T[]
+  newList: T[]
 ): {
   add: T[];
   remove: T[];
   unChange: T[];
+  changed: T[];
 } {
-  const add = changed.filter((it) => {
+  const add = newList.filter((it) => {
     return source.every((item) => !isEqual(item, it));
   });
   const remove = source.filter((it) => {
-    return changed.every((item) => !isEqual(item, it));
+    return newList.every((item) => !isEqual(item, it));
   });
-  const unChange = changed.filter((it) =>
+  const unChange = newList.filter((it) =>
     source.some((item) => isEqual(item, it))
+  );
+  const changed = newList.filter((it) =>
+    source.every((item) => !isEqual(item, it))
   );
   return {
     remove,
     add,
     unChange,
+    changed,
   };
 }
