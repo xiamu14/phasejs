@@ -7,7 +7,6 @@ export function diffArray<T>(
   add: T[];
   remove: T[];
   unChange: T[];
-  changed: T[];
 } {
   const add = newList.filter((it) => {
     return source.every((item) => !isEqual(item, it));
@@ -18,13 +17,9 @@ export function diffArray<T>(
   const unChange = newList.filter((it) =>
     source.some((item) => isEqual(item, it))
   );
-  const changed = newList.filter((it) =>
-    source.every((item) => !isEqual(item, it))
-  );
   return {
     remove,
     add,
     unChange,
-    changed,
   };
 }
